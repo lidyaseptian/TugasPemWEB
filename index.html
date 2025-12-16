@@ -1,0 +1,402 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NusaRasa - Kue Tradisional Indonesia</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <!-- Navbar -->
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <a href="#beranda" class="logo">
+                <i class="fas fa-cookie-bite"></i>
+                NusaRasa
+            </a>
+            <div class="menu-toggle" id="menuToggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            <ul class="nav-menu" id="navMenu">
+                <li><a href="#beranda">Beranda</a></li>
+                <li><a href="#produk">Produk</a></li>
+                <li><a href="#tentang">Tentang</a></li>
+                <li><a href="#kontak">Kontak</a></li>
+                <li class="cart-icon" onclick="toggleCart()">
+                    <i class="fas fa-shopping-cart"></i>
+                    <span class="cart-count" id="cartCount">0</span>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="beranda" class="hero">
+        <div class="hero-content">
+            <h1>Kue Tradisional Nusantara</h1>
+            <p>Kelezatan Warisan Budaya dalam Setiap Gigitan</p>
+            <button class="btn" onclick="scrollToSection('produk')">
+                <i class="fas fa-shopping-bag"></i> Pesan Sekarang
+            </button>
+        </div>
+    </section>
+
+    <!-- Products Section -->
+    <section id="produk">
+        <h2 class="section-title" data-aos="fade-up">Produk Kami</h2>
+        <p class="section-subtitle" data-aos="fade-up" data-aos-delay="100">Berbagai pilihan kue tradisional dengan cita rasa autentik</p>
+        <div class="products-grid">
+            <div class="product-card" data-aos="zoom-in" data-aos-delay="100">
+                <div class="product-image">
+                    <img src="klepon hijau hd.jpg" alt="Klepon">
+                    <div class="product-badge">Best Seller</div>
+                </div>
+                <div class="product-info">
+                    <h3 class="product-name">Klepon</h3>
+                    <p class="product-desc">Kue khas dengan isian gula merah yang lumer di mulut</p>
+                    <div class="product-footer">
+                        <span class="product-price">Rp 6.000</span>
+                        <button class="add-to-cart" onclick="addToCart('Klepon', 6000, '🍡')">
+                            <i class="fas fa-cart-plus"></i> Tambah
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="product-card" data-aos="zoom-in" data-aos-delay="200">
+                <div class="product-image">
+                    <img src="onde-onde hd.jpg" alt="Onde-Onde">
+                    <div class="product-badge">Populer</div>
+                </div>
+                <div class="product-info">
+                    <h3 class="product-name">Onde-Onde</h3>
+                    <p class="product-desc">Kue bola wijen renyah dengan isian kacang hijau manis</p>
+                    <div class="product-footer">
+                        <span class="product-price">Rp 2.500</span>
+                        <button class="add-to-cart" onclick="addToCart('Onde-Onde', 2500, '⚪')">
+                            <i class="fas fa-cart-plus"></i> Tambah
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="product-card" data-aos="zoom-in" data-aos-delay="300">
+                <div class="product-image">
+                    <img src="lemper hd.jpg" alt="Lemper">
+                </div>
+                <div class="product-info">
+                    <h3 class="product-name">Lemper</h3>
+                    <p class="product-desc">Ketan gurih berisi ayam bumbu khas yang lezat</p>
+                    <div class="product-footer">
+                        <span class="product-price">Rp 5.000</span>
+                        <button class="add-to-cart" onclick="addToCart('Lemper', 5000, '🌯')">
+                            <i class="fas fa-cart-plus"></i> Tambah
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="product-card" data-aos="zoom-in" data-aos-delay="100">
+                <div class="product-image">
+                    <img src="putu ayu hd.jpg" alt="Putu Ayu">
+                    <div class="product-badge">Terfavorit</div>
+                </div>
+                <div class="product-info">
+                    <h3 class="product-name">Putu Ayu</h3>
+                    <p class="product-desc">Kue pandan lembut dengan taburan kelapa parut</p>
+                    <div class="product-footer">
+                        <span class="product-price">Rp 3.000</span>
+                        <button class="add-to-cart" onclick="addToCart('Putu Ayu', 3000, '🧁')">
+                            <i class="fas fa-cart-plus"></i> Tambah
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="product-card" data-aos="zoom-in" data-aos-delay="200">
+                <div class="product-image">
+                    <img src="kue lapis hd.jpg" alt="Kue Lapis">
+                </div>
+                <div class="product-info">
+                    <h3 class="product-name">Kue Lapis</h3>
+                    <p class="product-desc">Kue berlapis warna-warni dengan tekstur kenyal</p>
+                    <div class="product-footer">
+                        <span class="product-price">Rp 3.000</span>
+                        <button class="add-to-cart" onclick="addToCart('Kue Lapis', 3000, '🥞')">
+                            <i class="fas fa-cart-plus"></i> Tambah
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="product-card" data-aos="zoom-in" data-aos-delay="300">
+                <div class="product-image">
+                    <img src="nastar hd.jpg" alt="Kue Nastar">
+                    <div class="product-badge">Spesial</div>
+                </div>
+                <div class="product-info">
+                    <h3 class="product-name">Kue Nastar</h3>
+                    <p class="product-desc">Kue kering isi selai nanas dengan mentega premium</p>
+                    <div class="product-footer">
+                        <span class="product-price">Rp 35.000</span>
+                        <button class="add-to-cart" onclick="addToCart('Kue Nastar', 35000, '🍪')">
+                            <i class="fas fa-cart-plus"></i> Tambah
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+         <div class="product-card" data-aos="zoom-in" data-aos-delay="300">
+                <div class="product-image">
+                    <img src="cucur hd.jpg" alt="Kue Nastar">
+                    <div class="product-badge">Spesial</div>
+                </div>
+                <div class="product-info">
+                    <h3 class="product-name">Kue Cucur</h3>
+                    <p class="product-desc">Kue Cucur gula merah</p>
+                    <div class="product-footer">
+                        <span class="product-price">Rp 2.000</span>
+                        <button class="add-to-cart" onclick="addToCart('Kue Cucur', 2000, '🍪')">
+                            <i class="fas fa-cart-plus"></i> Tambah
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="tentang" class="about-section">
+        <h2 class="section-title" data-aos="fade-up">Tentang Kami</h2>
+        <p class="section-subtitle" data-aos="fade-up" data-aos-delay="100">Cerita di balik kelezatan kue tradisional kami</p>
+        <div class="about-content">
+            <div class="about-image" data-aos="fade-right">
+                <img src="kue kue hd.jpg" alt="Tentang Kami">
+            </div>
+            <div class="about-text" data-aos="fade-left">
+                <h3>Melestarikan Warisan Kuliner Nusantara</h3>
+                <p>NusaRasa adalah perusahaan kuliner yang didedikasikan untuk melestarikan kekayaan kuliner tradisional Indonesia. Setiap kue kami dibuat dengan resep turun-temurun yang telah diwariskan dari generasi ke generasi.</p>
+                <p>Kami menggunakan bahan-bahan pilihan berkualitas tinggi dan tetap mempertahankan cara pembuatan tradisional untuk menghasilkan kue-kue dengan cita rasa autentik yang tak terlupakan.</p>
+                <p>Komitmen kami adalah memberikan pengalaman kuliner yang membawa Anda kembali ke kenangan masa kecil dan kehangatan tradisi keluarga Indonesia.</p>
+                
+                <div class="features">
+                    <div class="feature-item" data-aos="fade-up" data-aos-delay="100">
+                        <i class="fas fa-check-circle feature-icon"></i>
+                        <div>
+                            <h4>100% Halal</h4>
+                            <p>Bersertifikat halal MUI</p>
+                        </div>
+                    </div>
+                    <div class="feature-item" data-aos="fade-up" data-aos-delay="200">
+                        <i class="fas fa-leaf feature-icon"></i>
+                        <div>
+                            <h4>Bahan Alami</h4>
+                            <p>Tanpa pengawet buatan</p>
+                        </div>
+                    </div>
+                    <div class="feature-item" data-aos="fade-up" data-aos-delay="300">
+                        <i class="fas fa-truck feature-icon"></i>
+                        <div>
+                            <h4>Pengiriman Cepat</h4>
+                            <p>Gratis ongkir area Depok</p>
+                        </div>
+                    </div>
+                    <div class="feature-item" data-aos="fade-up" data-aos-delay="400">
+                        <i class="fas fa-award feature-icon"></i>
+                        <div>
+                            <h4>Kualitas Terjamin</h4>
+                            <p>Garansi uang kembali</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="kontak">
+        <h2 class="section-title" data-aos="fade-up">Hubungi Kami</h2>
+        <p class="section-subtitle" data-aos="fade-up" data-aos-delay="100">Kami siap melayani kebutuhan kue tradisional Anda</p>
+        <div class="contact-container">
+            <div class="contact-info" data-aos="fade-right">
+                <h3>Informasi Kontak</h3>
+                
+                <div class="info-item">
+                    <div class="info-icon">
+                        <i class="fas fa-map-marker-alt"></i>
+                    </div>
+                    <div class="info-text">
+                        <h4>Alamat</h4>
+                        <p>Jl. Raya Kue Tradisional No. 1<br>Pasir Putih, Sawangan, Depok 16519</p>
+                    </div>
+                </div>
+
+                <div class="info-item">
+                    <div class="info-icon">
+                        <i class="fas fa-phone"></i>
+                    </div>
+                    <div class="info-text">
+                        <h4>Telepon</h4>
+                        <p>+62 858-1709-0692</p>
+                    </div>
+                </div>
+
+                <div class="info-item">
+                    <div class="info-icon">
+                        <i class="fas fa-envelope"></i>
+                    </div>
+                    <div class="info-text">
+                        <h4>Email</h4>
+                        <p>info@kuenusantara.com<br>order@kuenusantara.com</p>
+                    </div>
+                </div>
+
+                <div class="info-item">
+                    <div class="info-icon">
+                        <i class="fas fa-clock"></i>
+                    </div>
+                    <div class="info-text">
+                        <h4>Jam Operasional</h4>
+                        <p>Senin - Sabtu: 08.00 - 20.00<br>Minggu: 09.00 - 15.00</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="map-container" data-aos="fade-left">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3966.521260322283!2d106.8195613!3d-6.1751395!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e69f5d2e764b12d%3A0x3d2ad6e1e0e9bcc8!2sJakarta!5e0!3m2!1sen!2sid!4v1234567890" allowfullscreen="" loading="lazy"></iframe>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pre-Footer -->
+    <div class="pre-footer">
+        <div class="pre-footer-content" data-aos="zoom-in">
+            <h2>Pesan Kue Tradisional Favorit Anda Sekarang!</h2>
+            <p>🎁 Gratis ongkir untuk pembelian minimal Rp 50.000</p>
+            <button class="btn" onclick="scrollToSection('produk')">
+                <i class="fas fa-shopping-cart"></i> Lihat Produk
+            </button>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>NusaRasa</h3>
+                <p>Melestarikan kekayaan kuliner tradisional Indonesia dengan cita rasa autentik.</p>
+                <div class="social-icons">
+                    <a href="#"><i class="fab fa-facebook"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-whatsapp"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                </div>
+            </div>
+            <div class="footer-section">
+                <h3>Menu Cepat</h3>
+                <ul>
+                    <li><a href="#beranda">Beranda</a></li>
+                    <li><a href="#produk">Produk</a></li>
+                    <li><a href="#tentang">Tentang Kami</a></li>
+                    <li><a href="#kontak">Kontak</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Layanan</h3>
+                <ul>
+                    <li><a href="#">Cara Pemesanan</a></li>
+                    <li><a href="#">Kebijakan Pengiriman</a></li>
+                    <li><a href="#">Kebijakan Pengembalian</a></li>
+                    <li><a href="#">FAQ</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Pembayaran</h3>
+                <p>Kami menerima berbagai metode pembayaran:</p>
+                <div style="margin-top: 1rem;">
+                    <i class="fas fa-wallet" style="font-size: 2rem;"></i>
+                    <img src="qris.png" alt="QRIS" style="height: 28px;">
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; Rangga, Lidya, & Rifai</p>
+        </div>
+    </footer>
+
+    <!-- Cart Modal -->
+    <div id="cartModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2><i class="fas fa-shopping-cart"></i> Keranjang Belanja</h2>
+                <span class="close" onclick="toggleCart()">&times;</span>
+            </div>
+            <div id="cartItems"></div>
+            <div class="cart-total" id="cartTotal">Total: Rp 0</div>
+            <button class="checkout-btn" onclick="checkout()">
+                <i class="fas fa-check-circle"></i> Checkout Sekarang
+            </button>
+        </div>
+    </div>
+
+    <!-- Scroll to Top Button -->
+    <div class="scroll-top" id="scrollTop" onclick="scrollToTop()">
+        <i class="fas fa-arrow-up"></i>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
+<!-- FITUR KHUSUS REFERENSI / DAFTAR PUSTAKA -->
+<section class="references">
+    <h2>Referensi / Daftar Pustaka</h2>
+    <ul id="ref-list">
+      <!-- Tambahkan item referensi di sini -->
+      
+        <li><a href="">https://www.instagram.com/p/C-4RfBhPSyP/?utm_source=ig_web_copy_link&igsh=NTc4MTIwNjQ2YQ==</a></li>
+        <li><a href="">https://id.pinterest.com/pin/27232772739490826/</a></li>
+        <li><a href="">https://id.pinterest.com/pin/328551735335910080/</a></li>
+        <li><a href="">https://id.pinterest.com/pin/235664992995689554/</a></li>
+        <li><a href="">https://www.foodpanda.sg/contents/kueh-lapis-recipe</a></li>
+        <li><a href="">https://id.pinterest.com/pin/191895634119244068/</a></li>
+        <li><a href="">https://id.pinterest.com/pin/78109374780793862/</a></li>
+        <li><a href="">hhttps://id.pinterest.com/pin/106819822400442706/</a></li>
+
+      
+    </ul>
+  </section>
+  
+  <style>
+    .references {
+      margin-top: 50px;
+      padding: 25px;
+      background: #f0f0f0;
+      border-radius: 12px;
+      border: 1px solid #ddd;
+    }
+    .references h2 {
+      margin-bottom: 15px;
+      font-size: 22px;
+      font-weight: bold;
+    }
+    .references ul {
+      list-style: disc;
+      padding-left: 25px;
+    }
+    .references a {
+      color: #0066cc;
+      text-decoration: none;
+      font-size: 16px;
+    }
+    .references a:hover {
+      text-decoration: underline;
+    }
+  </style>
+  
